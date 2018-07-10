@@ -4,10 +4,10 @@
 
 #include "Arduino.h"
 
-SoftwareSerial serialcon(10,11);
 #define buffer 64
 Servo servopan;
 Servo servotilt;
+SoftwareSerial serialcon(10,11);
 char indata [buffer];
 char inchar = -1;
 int count =0 ;
@@ -21,8 +21,6 @@ char xcor[buffer];
 char ycor[buffer];
 char sicor[buffer];
 
-
-
 //****************************************************
 // Motor Controllers
 // ****************************************************
@@ -30,19 +28,14 @@ char sicor[buffer];
 #define pwmA 3
 #define dirA 2
 
-//#define pwmA 5
-//#define dirA 9
-
-
 #define pwmB 5
 #define dirB 9
 
-//#define pwmB 3
-//#define dirB 2
-
 #define pwmC 6
 #define dirC 7
+
 int data =0;
+
 typedef struct{
   int pulse;
   bool direction;
@@ -60,8 +53,6 @@ struct comm{
 
 
 
-// Globals
-double sideStep = 0.60; // Limiting factor to ensure direct side to side movement
 
 // ****************************************************
 // Stops the motors
